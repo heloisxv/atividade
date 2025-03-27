@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+     <input type="number"  placeholder="Digite o primeiro numero" id="n1"> 
+     <input type="number"  placeholder="Digite o segundo numero" id="n2">
+     <input type="number"  placeholder="Digite o terceiro numero" id="n3">
+
+     <button id="calcular" onclick="calcular()"> calcular </button>
+ 
+     <input type="number"  placeholder="Resultado" id="resultado" readonly>
+
+     <div id="situacao">
+        situação:
+     </div>
+    </div>
+
+    <script>
+        let situacao=document.getElementById("situacao")
+        function calcular(){
+            let n1 = document.getElementById("n1").value;
+            let n2 = document.getElementById("n2").value;
+            let n3 = document.getElementById("n3").value;
+
+     let media=(parseFloat (n1) + parseFloat(n2) + parseFloat(n3))/3;
+
+     document.getElementById("resultado").value = media;
+ 
+
+     if ( media >= 6 ) {
+           situacao.innerText +="Aprovado";
+
+            } else {
+
+            if ( media => 5 ) {
+             situacao.innerText +="Reprovado";
+
+            } else {
+
+            situacao.innerText+="Recuperação";
+                }
+            }
+        
+
+        }
+    </script>
+</body>
+</html>
